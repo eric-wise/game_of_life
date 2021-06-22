@@ -14,9 +14,11 @@ function App() {
     return rows
   })
 
-  console.log(grid)
+  const [running, setRunning] = useState(false)
 
   return (
+    <>
+    <button onClick={() => { setRunning(!running)}}>{running ? 'stop' : 'start'}</button>
     <div style = {{display: 'grid', 
       gridTemplateColumns: `repeat(${numCols},20px)`
       }}>
@@ -40,6 +42,7 @@ function App() {
       ))
       )}
         </div>
+        </>
         );
     };
       
